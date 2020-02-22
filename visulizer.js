@@ -42,7 +42,7 @@ function animation(animate){
             $( `#bar${animate[i][0]}` ).css('background-color', '#af45d6');
             $( `#bar${animate[i][1]}` ).css('background-color', '#af45d6');
             // console.log(i);
-        }, 25 * k);
+        }, 40 * k);
         k+=1; 
 
         if (animate[i].length !== 2){
@@ -54,7 +54,7 @@ function animation(animate){
                 h2 = $( `#bar${animate[i][1]}` ).height();
                 $( `#bar${animate[i][0]}` ).height(h2);
                 $( `#bar${animate[i][1]}` ).height(h1);
-            }, 25 * k); 
+            }, 40 * k); 
 
             k++
 
@@ -63,7 +63,7 @@ function animation(animate){
         setTimeout(() => {
                 $( `#bar${animate[i][0]}` ).css('background-color', 'rgba(66, 134, 244, 0.8)');
              $( `#bar${animate[i][1]}` ).css('background-color', 'rgba(66, 134, 244, 0.8)');
-        }, 25 * k); 
+        }, 40 * k); 
             k++;
     }
     
@@ -120,7 +120,7 @@ function clickMerge(){
             $( `#bar${animate[i][0]}` ).css('background-color', '#af45d6');
             $( `#bar${animate[i][1]}` ).css('background-color', '#af45d6');
             // console.log(i);
-        }, 25 * k);
+        }, 40 * k);
         k+=1; 
 
         if (animate[i].length !== 2){
@@ -132,7 +132,7 @@ function clickMerge(){
                 // h2 = $( `#bar${animate[i][1]}` ).height();
                 $( `#bar${animate[i][0]}` ).height(animate[i][2]);
                 // $( `#bar${animate[i][1]}` ).height(h1);
-            }, 25 * k); 
+            }, 40 * k); 
 
             k++
 
@@ -141,7 +141,7 @@ function clickMerge(){
         setTimeout(() => {
                 $( `#bar${animate[i][0]}` ).css('background-color', 'rgba(66, 134, 244, 0.8)');
              $( `#bar${animate[i][1]}` ).css('background-color', 'rgba(66, 134, 244, 0.8)');
-        }, 25 * k); 
+        }, 40 * k); 
             k++;
     }
     
