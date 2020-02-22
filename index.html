@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sorting Visualizer</title>
+	<link rel = "icon" href =  "bar-chart.svg" type = "image/x-icon">
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script type="text/javascript" src="visulizer.js"></script>
+	<link rel="stylesheet" type="text/css" href="demo.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet"> 
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</head>
+<body>
+	<div style="background-color:  #123e59; background: solid; padding-top: 5  px; padding-bottom: 5px; color:white" >
+
+<h3 onClick="window.location.reload();" ><a class="nav-link"  href="#" style="serif; color: white !important; font-family: 'Permanent Marker', cursive; padding-left: 10px;">Sorting Visualizer</a></h3>
+<ul class="nav nav-pills" style="margin-top: 15px;">        
+
+   <li class="nav-item" style="margin-left: 35px; font-family: 'Roboto Slab', serif; color: white !important;">
+  	  <a class="nav-link" href="#" style="font-family: 'Roboto Slab', serif; color: white !important;" id="GenerateArray" >Generate New Array</a>
+  </li>
+ 
+  <li class="nav-item" style="margin-left: 85px; ">
+    <a class="nav-link" href="#" style="color: white !important; font-family: 'Roboto Slab', serif;" onclick="clickBubble()">Bubble Sort</a>
+  </li>
+  <li class="nav-item" style="margin-left: 40px; ">
+    <a class="nav-link" href="#" style="color: white !important; font-family: 'Roboto Slab', serif;" onclick="clickSelectionSort()">Selection Sort</a>
+  </li>    
+  <li class="nav-item" style="margin-left: 40px; ">
+    <a class="nav-link" href="#" style="color: white !important; font-family: 'Roboto Slab', serif;" onclick="clickMerge()">Merge Sort</a>
+  </li> 
+  <li class="nav-item" style="margin-left: 40px; ">
+    <a class="nav-link" href="#" style="color: white !important; font-family: 'Roboto Slab', serif;" onclick="clickQuickSort()">Quick Sort</a>
+  </li> 
+  <li class="nav-item" style="margin-left: 40px; ">
+    <a class="nav-link" href="#" style="color: white !important; font-family: 'Roboto Slab', serif;" onclick="clickHeapSort()">Heap Sort</a>
+  </li> 
+
+</ul>
+
+	
+</div>
+
+		
+
+  
+    <!-- <button id="GenerateArray">Generate</button> -->
+
+	<div id = 'content' class="containerclass">
+
+<div class="arrayElement" id = 'bar0' style="width: 12px; height: 0px; color: transparent; font-size: 8px; margin-left: 3.5px;">0</div>		
+<div class="arrayElement" id = 'bar1' style="width: 12px; height: 0px; color: transparent; font-size: 8px; margin-left: 3.5px; ">0</div>
+<div class="arrayElement" id = 'bar2' style="width: 12px; height: 0px; color: transparent; font-size: 8px; margin-left: 3.5px;">0</div>
+<div class="arrayElement" id = 'bar3' style="width: 12px; height: 0px; color: transparent; font-size: 8px; margin-left: 3.5px;">0</div>
+<div class="arrayElement" id = 'bar4' style="width: 12px; height: 0px; color: transparent; font-size: 8px; margin-left: 3.5px;">0</div>
+<div class="arrayElement" id = 'bar5' style="width: 12px; height: 0px; color: transparent; font-size: 8px; margin-left: 3.5px;">0</div>
+<div class="arrayElement" id = 'bar6' style="width: 12px; height: 0px; color: transparent; font-size: 8px; margin-left: 3.5px;">0</div>
+<div class="arrayElement" id = 'bar7' style="width: 12px; height: 0px; color: transparent; font-size: 8px; margin-left: 3.5px;">0</div>
+<div class="arrayElement" id = 'bar8' style="width: 12px; height: 0px; color: transparent; font-size: 8px; margin-left: 3.5px;">0</div>
+<div class="arrayElement" id = 'bar9' style="width: 12px; height: 0px; color: transparent; font-size: 8px; margin-left: 3.5px; ">0</div>
+<div class="arrayElement" id = 'bar10' style="width: 12px; height: 0px; color: transparent; font-size: 8px; margin-left: 3.5px;">0</div>
+<div class="arrayElement" id = 'bar11' style="width: 12px; height: 0px; color: transparent; font-size: 8px; margin-left: 3.5px;">0</div>
+<div class="arrayElement" id = 'bar12' style="width: 12px; height: 0px; color: transparent; font-size: 8px; margin-left: 3.5px; ">0</div>
+<div class="arrayElement" id = 'bar13' style="width: 12px; height: 0px; color: transparent; font-size: 8px; margin-left: 3.5px; ">0</div>
+<div class="arrayElement" id = 'bar14' style="width: 12px; height: 0px; color: transparent; font-size: 8px; margin-left: 3.5px;">0</div>
+<div class="arrayElement" id = 'bar15' style="width: 12px; height: 0px; color: transparent; font-size: 8px; margin-left: 3.5px;">0</div>
+<div class="arrayElement" id = 'bar16' style="width: 12px; height: 0px; color: transparent; font-size: 8px; margin-left: 3.5px;">0</div>
+<div class="arrayElement" id = 'bar17' style="width: 12px; height: 0px; color: transparent; font-size: 8px; margin-left: 3.5px; ">0</div>
+<div class="arrayElement" id = 'bar18' style="width: 12px; height: 0px; color: transparent; font-size: 8px; margin-left: 3.5px;">0</div>
+<div class="arrayElement" id = 'bar19' style="width: 12px; height: 0px; color: transparent; font-size: 8px; margin-left: 3.5px;">0</div>
+<div class="arrayElement" id = 'bar20' style="width: 12px; height: 0px; color: transparent; font-size: 8px; margin-left: 3.5px;">0</div>		
+<div class="arrayElement" id = 'bar21' style="width: 12px; height: 0px; color: transparent; font-size: 8px; margin-left: 3.5px; ">0</div>
+<div class="arrayElement" id = 'bar22' style="width: 12px; height: 0px; color: transparent; font-size: 8px; margin-left: 3.5px;">0</div>
+<div class="arrayElement" id = 'bar23' style="width: 12px; height: 0px; color: transparent; font-size: 8px; margin-left: 3.5px;">0</div>
+<div class="arrayElement" id = 'bar24' style="width: 12px; height: 0px; color: transparent; font-size: 8px; margin-left: 3.5px;">0</div>
+<div class="arrayElement" id = 'bar25' style="width: 12px; height: 0px; color: transparent; font-size: 8px; margin-left: 3.5px;">0</div>
+<div class="arrayElement" id = 'bar26' style="width: 12px; height: 0px; color: transparent; font-size: 8px; margin-left: 3.5px;">0</div>
+<div class="arrayElement" id = 'bar27' style="width: 12px; height: 0px; color: transparent; font-size: 8px; margin-left: 3.5px;">0</div>
+<div class="arrayElement" id = 'bar28' style="width: 12px; height: 0px; color: transparent; font-size: 8px; margin-left: 3.5px;">0</div>
+<div class="arrayElement" id = 'bar29' style="width: 12px; height: 0px; color: transparent; font-size: 8px; margin-left: 3.5px; ">0</div>
+<div class="arrayElement" id = 'bar30' style="width: 12px; height: 0px; color: transparent; font-size: 8px; margin-left: 3.5px;">0</div>
+<div class="arrayElement" id = 'bar31' style="width: 12px; height: 0px; color: transparent; font-size: 8px; margin-left: 3.5px;">0</div>
+<div class="arrayElement" id = 'bar32' style="width: 12px; height: 0px; color: transparent; font-size: 8px; margin-left: 3.5px; ">0</div>
+<div class="arrayElement" id = 'bar33' style="width: 12px; height: 0px; color: transparent; font-size: 8px; margin-left: 3.5px; ">0</div>
+<div class="arrayElement" id = 'bar34' style="width: 12px; height: 0px; color: transparent; font-size: 8px; margin-left: 3.5px;">0</div>
+<div class="arrayElement" id = 'bar35' style="width: 12px; height: 0px; color: transparent; font-size: 8px; margin-left: 3.5px;">0</div>
+<div class="arrayElement" id = 'bar36' style="width: 12px; height: 0px; color: transparent; font-size: 8px; margin-left: 3.5px;">0</div>
+<div class="arrayElement" id = 'bar37' style="width: 12px; height: 0px; color: transparent; font-size: 8px; margin-left: 3.5px; ">0</div>
+<div class="arrayElement" id = 'bar38' style="width: 12px; height: 0px; color: transparent; font-size: 8px; margin-left: 3.5px;">0</div>
+<div class="arrayElement" id = 'bar39' style="width: 12px; height: 0px; color: transparent; font-size: 8px; margin-left: 3.5px;">0</div>
+
+		
+	</div>
+
+</body>
+</html>

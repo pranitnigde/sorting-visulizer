@@ -1,0 +1,73 @@
+function buildMaxHeap(arrlist, n)  
+    {  
+        for (let i = 1; i < n; i++)  
+        { 
+            // if child is bigger than parent
+            animate.push( [i, (i-1)/2] ); 
+            if (arrlist[i] > arrlist[(i - 1) / 2])  
+            { 
+                let j = i; 
+          
+                // swap child and parent until 
+                // parent is smaller 
+                while (arrlist[j] > arrlist[(j - 1) / 2])  
+                { 
+                    animate.push( [j, (j-1)/2] );
+                    animate.push( [j, (j-1)/2, j, (j-1)/2] );
+                    // swap(arrlist[j], arrlist[(j - 1) / 2]);
+                    let temp = arrlist[j]; 
+                    arrlist[j] = arrlist[(j-1)/2]; 
+                    arrlist[(j-1)/2] = temp;  
+                    j = (j - 1) / 2; 
+                } 
+            } 
+        } 
+    } 
+      
+    function heapSort(arrlist, n)  
+    { 
+        buildMaxHeap(arrlist, n); 
+      
+        for (let i = n - 1; i > 0; i--) 
+        { 
+            // swap value of first indexed  
+            // with last indexed  
+            // swap(arrlist[0], arrlist[i]);
+            animate.push( [0, i, 0, i] );
+                let temp = arrlist[i]; 
+                arrlist[i] = arrlist[0]; 
+                arrlist[0] = temp; 
+          
+            // maintaining heap property 
+            // after each swapping 
+            let j = 0, index; 
+              
+            do
+            { 
+                index = (2 * j + 1); 
+                  
+                // if left child is smaller than  
+                // right child point index variable  
+                // to right child 
+                animate.push( [index, index+1] );
+                if (arrlist[index] < arrlist[index + 1] && index < (i - 1)) 
+                    index++; 
+              
+                // if parent is smaller than child  
+                // then swapping parent with child  
+                // having higher value 
+                animate.push( [j, index] );
+                if (arrlist[j] < arrlist[index] && index < i) {
+                    // swap(arrlist[j], arrlist[index]); 
+                    animate.push( [j, index, j, index] );
+                    let temp = arrlist[j]; 
+                    arrlist[j] = arrlist[index]; 
+                    arrlist[index] = temp; 
+              
+                }
+                
+                j = index; 
+              
+            } while (index < i); 
+        } 
+    } 
